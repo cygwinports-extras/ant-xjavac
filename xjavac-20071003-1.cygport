@@ -1,0 +1,16 @@
+inherit ant
+
+
+SRC_URI="http://svn.apache.org/viewvc/xerces/java/trunk/tools/src/XJavac.java?view=co"
+SRC_DIR=.
+
+src_compile() {
+	cd ${B}
+	cygjavac -cp ${ANT_HOME}/lib/ant.jar -d . ${S}/*.java
+	cygjar cf xjavac.jar org/
+}
+
+src_install() {
+	cd ${B}
+	dojar xjavac.jar
+}
