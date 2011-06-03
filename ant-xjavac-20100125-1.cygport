@@ -1,0 +1,25 @@
+inherit ant
+
+
+SRC_URI="http://svn.apache.org/viewvc/xerces/java/trunk/tools/src/XJavac.java?view=co"
+SRC_DIR=.
+
+PATCH_URI="20100125-gnu-classpath.patch"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_unpack_hook() {
+	sed -e '1d;16,$d;s/^.\* \?//g' XJavac.java > COPYING
+}
+
+src_compile() {
+	cd ${B}
+	cygjavac -cp ${ANT_HOME}/lib/ant.jar -d . ${S}/XJavac.java
+	cygjavadoc -classpath ${ANT_HOME}/lib/ant.jar -d doc ${S}/XJavac.java
+	cygjar cf ${PN}.jar org/
+}
+
+src_install() {
+	cd ${B}
+	doanttask ${PN}.jar
+	dojavadoc doc
+}

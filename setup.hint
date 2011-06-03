@@ -1,0 +1,6 @@
+category: Java
+requires: ant
+sdesc: "Ant wrapper for adjusting JDK compiler bootclasspath"
+ldesc: "The purpose of this Ant task is to diagnose whether the build is 
+running on a 1.4 or above JVM; if it is, to set up the bootclasspath; if 
+it isn't, then invoke the Javac12 task."

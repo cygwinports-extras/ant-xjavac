@@ -1,0 +1,10 @@
+--- origsrc/XJavac.java	2011-06-03 02:40:39.299959500 -0500
++++ src/XJavac.java	2011-06-03 02:58:59.257877300 -0500
+@@ -67,6 +67,7 @@ public class XJavac extends Javac {
+                      (vendor.indexOf("BLACKDOWN") >= 0) || 
+                      (vendor.indexOf("APPLE") >= 0) ||
+                      (vendor.indexOf("HEWLETT-PACKARD") >= 0) ||
++                     (vendor.indexOf("GNU CLASSPATH") >= 0) ||
+                      (vendor.indexOf("KAFFE") >= 0) ||
+                      (vendor.indexOf("SABLE") >= 0) ||
+                      (vendor.indexOf("FREEBSD") >= 0)) {
