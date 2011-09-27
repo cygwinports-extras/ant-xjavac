@@ -1,6 +1,7 @@
 inherit ant
 
-
+DESCRIPTION="Ant javac wrapper (required to build java-xerces2)"
+HOMEPAGE="http://xerces.apache.org/xerces2-j/"
 SRC_URI="http://svn.apache.org/viewvc/xerces/java/trunk/tools/src/XJavac.java?view=co"
 SRC_DIR=.
 
